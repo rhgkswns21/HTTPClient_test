@@ -1,7 +1,7 @@
 import requests
 
 #HTTP API to add new entity details                                                                         / OK
-# r = requests.post('http://18.232.187.34:3105/Identity/entities',
+# r = requests.post('http://111.93.235.82:3105/Identity/entities',
 #                   None,
 #                   {"entityId": "353041080777777","entityType": "GATEWAY",
 #                    "entityCategory": "SHM","entityModel": "API_TEST",
@@ -9,7 +9,7 @@ import requests
 #                    "version": "1.0","blocked": "false","panId": "0x7777"})
 
 #HTTP API to download entity private key file                                                               / OK
-# r = requests.get('http://18.232.187.34:3105/Identity/entities/353041080777777/keyfile')
+# r = requests.get('http://111.93.235.82:3105/Identity/entities/353041080777777/keyfile')
 
 #HTTP API to download (GET) entity Certificate file                                                         / OK
 # r = requests.get('http://18.232.187.34:3105/Identity/entities/353041080777777/certfile')
