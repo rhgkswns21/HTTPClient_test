@@ -93,12 +93,18 @@ import requests
 
 # HTTP API to GET security info of a gateway                                                                / OK
 # r = requests.get('http://18.232.187.34:3105/Identity/entities/353041080777777/securityinfo')
+# \Users\ko\Desktop
 
+# files = open("C:/Users/ko/Desktop/test.csv")
+# f = open('c:/Users/ko/Desktop/test.csv', 'rb')
+# print(f.readline())
+# f.close()
 # HTTP API to add bulk entities from CSV file                                                       / Please Check
-# r = requests.get('http://18.232.187.34:3105/Identity/entities/addBulk')
+# r = requests.post('http://18.232.187.34:3105/Identity/entities/addBulk', files=f)
+# files.close()
 
 # HTTP API to add bulk end nodes from CSV file                                                      / Please Check
-# r = requests.get('http://18.232.187.34:3105/Identity/nodes/addBulk')
+# r = requests.post('http://18.232.187.34:3105/Identity/nodes/addBulk')
 
 # HTTP API to renew an entity certificate                                                                   / OK
 # r = requests.post('http://18.232.187.34:3105/Identity/entities/353041080777777/renew')
@@ -131,10 +137,10 @@ import requests
 # HTTP API to get the list of entities by category                                                          / OK
 # r = requests.get('http://18.232.187.34:3105/Identity/entities/category/SHM')
 
-# HTTP API to add new Network details                                                               / Please Check
-# r = requests.post('http://18.232.187.34:3105/Identity/entities/networks', None,
+# HTTP API to add new Network details                                                                       / OK
+# r = requests.post('http://18.232.187.34:3105/Identity/networks', None,
 #                   {
-#                       "panId": 0x1235,
+#                       "panId": "0x1234",
 #                       "bandwidth": 2,
 #                       "spreadFactor": 7,
 #                       "ack": "true",
@@ -142,6 +148,70 @@ import requests
 #                       "power": 13,
 #                       "channel": 2
 #                   })
+
+# # HTTP API to get the list of networks                                                                    / OK
+# r = requests.get('http://18.232.187.34:3105/Identity/networks')
+
+# HTTP API to get the details of a network                                                                  / OK
+# r = requests.get('http://18.232.187.34:3105/Identity/networks/0x0006')
+
+# HTTP API to DELETE the details of a network                                                               / OK
+# r = requests.delete('http://18.232.187.34:3105/Identity/networks/0x1234')
+
+# HTTP API to Update Network details                                                                        / OK
+# r = requests.put('http://18.232.187.34:3105/Identity/networks/0x1234', None,
+#                  {
+#                     "panId": "0x1234",
+#                     "bandwidth": 2,
+#                     "spreadFactor": 7,
+#                     "ack": "true",
+#                     "retryCount": 3,
+#                     "power": 10,
+#                     "channel": 2
+#                  })
+
+# HTTP API to add/update Configuration for an entity                                                        / OK
+# r = requests.post('http://18.232.187.34:3105/Identity/entities/353041080777777/config',  None,
+#                   {
+#                     "entityId": "353041080777777",
+#                     "role": 1,
+#                     "ownId": "0x0000",
+#                     "netAddr": 0,
+#                     "simPin": "1234",
+#                     "apn": "iijmobile.biz",
+#                     "simUser": "mobile.iij",
+#                     "simPassword": "iij",
+#                     "preload": 5,
+#                     "duration": 30,
+#                     "useSSL": "false",
+#                     "lowPowerMode": "false",
+#                     "syncTime": 5
+#                   })
+
+# HTTP API to GET configuration for an entity                                                               / OK
+# r = requests.get('http://18.232.187.34:3105/Identity/entities/353041080777777/config')
+
+# HTTP API to GET configuration for an entity                                                               / OK
+# r = requests.get('http://18.232.187.34:3105/Identity/entities/353041080777777/configuration')
+
+
+# HTTP API to get the list of entities for given PAN Id                                                     / OK
+# r = requests.get('http://18.232.187.34:3105/Identity/entities/panid/0x0006')
+
+# HTTP API to get the list of master entities for given PAN Ids                                             / OK
+# r = requests.post('http://18.232.187.34:3105/Identity/entities/master', None,
+#                  {
+#                      "panIds":["0x1234", "0x0006", "0x7777"]
+#                  })
+
+
+
+
+
+
+
+
+
 
 
 
