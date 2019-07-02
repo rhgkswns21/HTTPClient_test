@@ -1,12 +1,14 @@
 import requests
 
+url = 'http://111.93.235.82:3105'
+
 #HTTP API to add new entity details                                                                         / OK
-# r = requests.post('http://111.93.235.82:3105/Identity/entities',
-#                   None,
-#                   {"entityId": "353041080777777","entityType": "GATEWAY",
-#                    "entityCategory": "SHM","entityModel": "API_TEST",
-#                    "friendlyName": "API_TEST","lastModifiedDate": "2019-05-27",
-#                    "version": "1.0","blocked": "false","panId": "0x7777"})
+r = requests.post(url + '/Identity/entities',
+                  None,
+                  {"entityId": "353041080777777","entityType": "GATEWAY",
+                   "entityCategory": "SHM","entityModel": "API_TEST",
+                   "friendlyName": "API_TEST","lastModifiedDate": "2019-05-27",
+                   "version": "1.0","blocked": "false","panId": "0x7777"})
 
 #HTTP API to download entity private key file                                                               / OK
 # r = requests.get('http://111.93.235.82:3105/Identity/entities/353041080777777/keyfile')
